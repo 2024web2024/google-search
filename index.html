@@ -1,260 +1,621 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="./search_google.png">
+
     <link rel="stylesheet" href="./index.css">
+
     <title>بـحـث مـخـصـص فـي جـوجـل</title>
+
 </head>
+
 <body>
 
+
+
 <main>
+
     <form action="https://www.google.com/search" method="get" id="form">
+
         <h2 id="title">الــبــحــث عـن الـمــعــلــومــات بـشــكــل اســرع</h2>
+
         <article>
+
             <h3> ادخل نص </h3>
+
             <section>
+
                 
+
                 <div>
+
                     <!-- <textarea id="input" rows="1" placeholder="بـحـث"></textarea> -->
+
                     <input type="text" id="input" required placeholder="بـحـث" autocomplete="off">
+
+                    <input type="text" id="input_2" hidden placeholder="" autocomplete="off">
+
+                    <select id="select_size" hidden>
+
+                        <option value="b"> بايت </option>
+
+                        <option value="kb"> كيلو بايت </option>
+
+                        <option value="mb"> ميجا بايت </option>
+
+                        <option value="gb"> جيجا بايت </option>
+
+                    </select>
+
                     <textarea name="q" hidden id="search_text"></textarea>
 
+
+
                     <nav id="nav">
+
                         <b id="first_b">
+
                             <span id="value_select"> اخـتـر نـمـوذج </span>
+
                             <span id="show_dropdown" style="color: rgb(0, 0, 0, 0.90);">▼</span>
+
                         </b>
+
                         <div id="dropdown"> 
+
                             <i>——— صـــور ———</i>
 
-                            <option value="icon filetype: ico"> ايقونات ico </option>
-                            <option value="photo filetype: gif"> صور متحركة </option>
-                            <option value="icon filetype: gif"> ايقونات متحركة </option>
-                            <option value="filetype: drawing"> صور رسم </option>
-                            <option value="allinurl:transpatent"> خلفية شفافة </option>
+
+
+                            <option value="icon filetype: ico" class="file"> ايقونات ico </option>
+
+                            <option value="photo filetype: gif" class="file"> صور متحركة </option>
+
+                            <option value="icon filetype: gif" class="file"> ايقونات متحركة </option>
+
+                            <option value="filetype: drawing" class="file"> صور رسم </option>
+
+                            <option value="allinurl:transpatent" class="file"> خلفية شفافة </option>
+
                              
+
                             <i>——— مـلـفـاتــ ———</i>
 
+
+
                             <b>ملفات pdf</b>
+
                             <span>filetype: pdf</span>
 
-                            <option value="filetype: pdf"> ملفات pdf </option>
-                            <option value="filetype: psd"> ملفات فوتوشوب </option>
-                            <option value="illustrator filetype: ai"> ملفات اليستريتور </option>
-                            <option value="font filetype: ttf"> خطوط </option>
-                            <option value=" size: > " class="size"> تحديد حجم الملف </option>
-                            <option value=" ext: . "> تحديد امتداد </option>
+
+
+                            <option value="filetype: pdf" class="file"> ملفات pdf </option>
+
+                            <option value="filetype: psd" class="file"> ملفات فوتوشوب </option>
+
+                            <option value="illustrator filetype: ai" class="file"> ملفات اليستريتور </option>
+
+                            <option value="font filetype: ttf" class="file"> خطوط </option>
+
+                            <option value=" size: " class="size"> تحديد حجم الملف </option>
+
+                            <option value=" ext: ." class="ex"> تحديد امتداد </option>
+
+
 
                             <i>——— عـنـوان URL ———</i>
 
-                            <option value="ext: . " class="url"> تحديد امتداد </option>
+
+
                             <option value=" allinurl " class="url">البحث عن كلمة محددة في عنوان URL</option>
+
                             <option value=" inurl " class="url">البحث عن <span> جميع </span> الكلمات او العبارات موجودة في عنوان URL</option>
-                            
-                            <option value=" allintitle: " class="url">البحث عن كلمة  محددة في عنوان صفحة الموقع</option>
-                            <option value=" intitle: " id="all_title" class="url"> البحث في <span> جميع </span> المواقع التي تحتوي على جملة موجودة في عنوان الصفحة</option>
-                            
-                            <option value=" allintext: " class="url">البحث عن كلمة موجودة في محتوى الموقع</option>
-                            <option value=" intext: " class="url"> البحث عن <span>كلمة او جملة او نص</span> موجودة في محتوى الموقع</option>
-                            
-                            <option value="site:*." class="url">البحث عن جميع المواقع المنتهية دومين معين</option>
-                            <b id="sub_site" class="url">عرض جميع المواقع الفرعية لموقع معين</b>
-                            <b id="sub_site_word" class="url">عرض جميع المواقع الفرعية لموقع معين التي<span> تحتوي على كلمة معينة </span></b>
-                            
-                            <i>——— اخـــرى ———</i>
-                            <b id="country">البحث داخل دولة معينة</b>
-                            <b id="remove">ازالة موضوع من نتائج البحث</b>
+
                             
 
+                            <option value=" allintitle: " class="url">البحث عن كلمة  محددة في عنوان صفحة الموقع</option>
+
+                            <option value=" intitle: " id="all_title" class="url"> البحث في <span> جميع </span> المواقع التي تحتوي على جملة موجودة في عنوان الصفحة</option>
+
+                            
+
+                            <option value=" allintext: " class="url">البحث عن كلمة موجودة في محتوى الموقع</option>
+
+                            <option value=" intext: " class="url"> البحث عن <span>كلمة او جملة او نص</span> موجودة في محتوى الموقع</option>
+
+                            
+
+                            <option value="site:*." class="url">البحث عن جميع المواقع المنتهية دومين معين</option>
+
+                            <b id="sub_site" class="url">عرض جميع المواقع الفرعية لموقع معين</b>
+
+                            <b id="sub_site_word" class="url">عرض جميع المواقع الفرعية لموقع معين التي<span> تحتوي على كلمة معينة </span></b>
+
+                            
+
+                            <i>——— اخـــرى ———</i>
+
+                            <b id="country">البحث داخل دولة معينة</b>
+
+                            <b id="remove">ازالة موضوع من نتائج البحث</b>
+
+                            
+
+
+
                         </div>
+
                     </nav>
+
                     <button type="submit" id="btn_submit">
+
                         <img src="./search_google.png" id="img_search" width="20" alt="">
+
                     </button>
+
         
+
                 </div>
+
             </section>
+
         </article>
+
     </form>
+
 </main>
+
     
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+     <!-- <script src="./jquery.min.js"></script> -->
+
+
+
     <script>
 
+
+
         $(function () {
+
             $("#input").focus()
 
+
+
             document.getElementById("form").addEventListener('submit' ,function (event) {
+
                 event.preventDefault()
+
             })
 
+
+
             $("#first_b span:last-child").click( function () {
+
                 let item = document.getElementById("dropdown")
+
                 if(getComputedStyle(item).getPropertyValue('display') == 'none'){
+
                     $("nav div").css("display","flex")
+
                     $(this).css("transform","none")
+
                 }
+
                 else if(getComputedStyle(item).getPropertyValue('display') == "flex"){
+
                     $("nav div").css("display","none")
+
                     // $(this).css("transform","rotate(180deg)")
+
                 }
+
             })
+
+
+
 
 
             $("#show_dropdown").click(function () {
+
                 if($(this).text() == "▼"){
+
                     $(this).text("▲") 
+
                 }else{
+
                     $(this).text("▼")
+
                 }
-            })
-            
-            
-            $("#input").keyup(function () {
-                var inp = $(this).val()
-                if ( /[\u0600-\u06FF]/.test(inp.charAt(0)) ) {
-                    $(this).css("text-align" ,"right")
-                } else {
-                    $(this).css("text-align" ,"left")
-                }
+
             })
 
-            function search(item ,id) {
+            
+
+            
+
+            $("#input").keyup(function () {
+
+                var inp = $(this).val()
+
+                if ( /[\u0600-\u06FF]/.test(inp.charAt(0)) ) {
+
+                    $(this).css("text-align" ,"right")
+
+                } else {
+
+                    $(this).css("text-align" ,"left")
+
+                }
+
                 
+
+            })
+
+
+
+            function search(item ,id) {
+
+                
+
                 if (item == "item_b") {
+
+
 
                     let value_inp = $("#input")
 
+
+
                     var google = "";
+
                     
+
                     
+
                     if ( $(`#${id}`).attr("id") == "sub_site" ) {
+
                         value_inp.attr("placeholder","اكتب عنوان الموقع")
+
                         google = "site:" + value_inp.val() + "-www"
+
                        
+
                     } else if ( $(`#${id}`).attr("id") == "sub_site_word" ){
+
                         let sub_site_word = prompt("اكتب عنوان الموقع")
+
                         let sub_site_word1 = prompt("اكتب كلمة فرعية")
+
                         if (sub_site_word && sub_site_word1){
+
                             google = "site:" + sub_site_word + "/" + sub_site_word1
+
                         }
+
                     } else if ( $(`#${id}`).attr("id") == "country" ){
+
                         value_inp.attr("placeholder","اكتب اسم الدولة")
+
                         google = '"' + value_inp.val() + '"'
+
             
+
                     } else if ( $(`#${id}`).attr("id") == "remove" ){
+
                         value_inp.attr("placeholder","اكتب كلمة لازالتها من نتائج البحث")
+
                         google = '-' + value_inp.val()
+
                     }
+
     
+
                     let text = $("#input").val()
+
                     $("#input").attr("placeholder","بحث")
+
     
+
                     $value_search = text + ' ' + google
+
                     $("#search_text").val($value_search)
+
     
+
                 } else {
+
+
 
                     let value_inp = $("#input").val()
 
+                    let value_inp_1 = $("#input_2").val()
+
+                    let select_size = $("#select_size").val()
+
+
+
                     $("#input").attr("placeholder","بحث")
 
-                    $op_value_search = value_inp +' '+ id
-                    $("#search_text").val($op_value_search)
+
+
+                    if($("#select_size").attr("hidden") != "hidden") {
+
+
+
+                        $op_value_search = value_inp +' '+ id + value_inp_1 + select_size
+
+                        alert($op_value_search)
+
+                        $("#search_text").val($op_value_search)
+
+
+
+                    } else if($("#input_2").is(":empty")) {
+
+                        $op_value_search = value_inp +' '+ id
+
+                        $("#search_text").val($op_value_search)
+
+                        alert($op_value_search)
+
+
+
+                    } else {
+
+                        $op_value_search = value_inp +' '+ id + value_inp_1
+
+                        $("#search_text").val($op_value_search)
+
+                        alert($op_value_search)
+
+                        
+
+                    }
+
+
+
+
 
                 }
 
+
+
                 document.getElementById("form").addEventListener('submit' ,function (event) {
+
                     event.target.submit()
+
                 })
 
+
+
             }
+
             
+
             var status = ""
+
             var item_value = ""
+
             
+
             $("b:not(#first_b)").click( function () {
 
 
+
+
+
                 if($(this).attr("class") == "url") {
+
                     $("#input").val('')
+
                     $("article h3").text(" ادخل عنوان الصفحة ")
+
                     $("#input").attr("type" ,"url")
+
                 } else {
+
                     $("article h3").text(" ادخل نص ")
+
                     $("#input").attr("type" ,"text")
+
                 }
 
+
+
                 if ($("#show_dropdown").text() == "▼"){
+
                     $("#show_dropdown").text("▲") 
+
                 } else {
+
                     $("#show_dropdown").text("▼")
+
                 }
+
                 
+
                 // event.target.submit()
+
                 $("nav div").css("display","none")
+
                 $("nav div b ,nav div option").css({"background-color":"whitesmoke","color":"black"})
+
                 
+
                 $(this).css({"background-color":"rgb(0, 149, 255)","color":"whitesmoke"})
+
+
 
                 status = "item_b"
+
                 item_value = $(this).attr("id")
 
+
+
             })
+
             
+
             $("option").click( function () {
 
+
+
                 if($(this).attr("class") == "url") {
-                    $("#input").val('')
-                    $("article h3").text(" ادخل عنوان الصفحة ")
-                    $("#input").attr("type" ,"url")
+
+                    $("#input_2").attr("hidden",false)
+
+                    $("#select_size").attr("hidden",true)
+
+                    $("#input_2").attr("required",true)
+
+                    $("#input_2").val('')
+
+                    $("#input_2").attr("placeholder", " رابط ")
+
+                    
+
+                    $("article h3").text(" البحث عن موقع ")
+
+                    $("#input_2").attr("type" ,"url")
+
+
 
                 } else if ($(this).attr("class") == "size") {
-                    $("#input").val('')
-                    $("article h3").text(" ادخل رقم صحيح ")
-                    $("#input").attr("type" ,"number")
+
+                    $("#input_2").attr("hidden",false)
+
+                    $("#select_size").attr("hidden",false)
+
+                    $("#input_2").attr("required",true)
+
+                    $("#input_2").val('')
+
+                    $("#input_2").attr("placeholder", " رقم ")
+
+
+
+                    $("article h3").text("  البحث عن ملف  ")
+
+                    $("#input_2").attr("type" ,"number")
+
+                    
+
+                } else if ($(this).attr("class") == "ex") {
+
+                    $("#input_2").attr("hidden",false)
+
+                    $("#input_2").attr("required",true)
+
+                    $("#select_size").attr("hidden",true)
+
+                    $("#input_2").val('')
+
+                    $("#input_2").attr("placeholder", " نوع الملف ")
+
+
+
+                    $("article h3").text("  البحث عن ملف  ")
+
+                    $("#input_2").attr("type" ,"text")
+
+                } else if ($(this).attr("class") == "file") {
+
+                    $("article h3").text("  البحث عن ملف  ")
+
                 } else {
-                    $("article h3").text(" ادخل نص ")
+
+                    $("#input_2").attr("hidden",true)
+
+                    $("#select_size").attr("hidden",true)
+
+                    $("#input_2").attr("required",false)
+
+                    $("article h3").text("  البحث عن نص  ")
+
                     $("#input").attr("type" ,"text")
+
                 }
+
+
 
                 if ($("#show_dropdown").text() == "▼"){
+
                     $("#show_dropdown").text("▲") 
+
                 } else {
+
                     $("#show_dropdown").text("▼")
+
                 }
 
+
+
                 $("nav div").css("display","none")
+
                 $("nav div b ,nav div option").css({"background-color":"whitesmoke","color":"black"})
+
                 
+
                 $(this).css({"background-color":"rgb(0, 149, 255)","color":"whitesmoke"})
 
+
+
                 status = "item_option"
+
                 item_value = `${$(this).val()}`
 
+
+
             })
+
+
 
             $("#btn_submit").click(function () {
 
+
+
                 search(status ,item_value);
+
             })
 
+
+
     
+
             // تاخير الارسال 
+
             // document.getElementById("form").addEventListener('submit' ,function (event) {
+
             //     event.preventDefault()
 
+
+
             //     setTimeout(function () {
+
             //         event.target.submit()
+
             //     },1500)
+
             // })
 
+
+
         })
+
     </script>
+
 </body>
+
 </html>
